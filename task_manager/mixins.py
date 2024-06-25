@@ -1,7 +1,7 @@
 from django.contrib import messages
 
 
-class CustomMessageMixin:
+class InfoMessageMixin:
     message: str = ""
 
     def dispatch(self, request, *args, **kwargs):
