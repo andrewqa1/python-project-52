@@ -11,8 +11,11 @@
     {% bootstrap_javascript %}
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ms-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ms-3 d-flex">
       <a class="navbar-brand" href="{% url 'main' %}">{% translate "Task Manager" %}</a>
+      {% if user %}
+        <span class="ms-auto navbar-brand"> {{ user.username}} </span>
+      {% endif %}
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent">
         <span class="navbar-toggler-icon"></span>
       </button>
