@@ -1,8 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 
 
-class UserCreateForm(UserCreationForm):
+class UserCreateUpdateForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["first_name"].required = True
@@ -11,3 +12,4 @@ class UserCreateForm(UserCreationForm):
     class Meta:
         model = get_user_model()
         fields = ["first_name", "last_name", "username", "password1", "password2"]
+
