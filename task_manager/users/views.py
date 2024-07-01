@@ -5,8 +5,11 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
-from task_manager.mixins import (AuthRequiredMixin, CheckSelfUserMixin,
-                                 NoPermissionRedirectMixin)
+from task_manager.mixins import (
+    AuthRequiredMixin,
+    CheckSelfUserMixin,
+    NoPermissionRedirectMixin,
+)
 from task_manager.users.forms import UserCreateUpdateForm
 from task_manager.users.mixins import CheckRelatedTasksMixin
 
@@ -17,6 +20,7 @@ class UserCreateView(SuccessMessageMixin, CreateView):
     template_name: str = "users/create.html"
 
     success_message: tuple = _("User successfully registered")
+    success_url = reverse_lazy("login")
 
 
 class UserListView(ListView):
