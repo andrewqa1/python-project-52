@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     "task_manager",
     "users",
     "statuses",
-    "labels"
+    "labels",
+    "tasks",
 ]
 
 MIDDLEWARE = [
@@ -91,7 +92,7 @@ DATABASES = {
         "USER": os.getenv("POSTGRES_USER"),
         "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
         "HOST": os.getenv("POSTGRES_HOST"),
-        "PORT": "5432"
+        "PORT": "5432",
     }
 }
 

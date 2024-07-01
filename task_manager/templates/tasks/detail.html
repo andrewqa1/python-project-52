@@ -42,9 +42,8 @@
       </div>
       <div class="row p-1">
         <div class="col">
-          <a href="{% url 'tasks:update' task.id %}">{% translate "Update" %}</a>
-          <br>
-          <a href="{% url 'tasks:delete' task.id %}">{% translate "Delete" %}</a>
+          <a class="btn btn-danger" href={% url 'tasks:delete' task.id %}>{% translate 'Delete' %}</a>
+          <a class="btn btn-primary" href={% url 'tasks:update' task.id %}>{% translate 'Update' %}</a>
         </div>
       </div>
     </div>

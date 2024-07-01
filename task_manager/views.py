@@ -1,7 +1,8 @@
 from django.contrib.auth import views
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic import TemplateView
 from django.utils.translation import gettext as _
+from django.views.generic import TemplateView
+
 from task_manager.mixins import InfoMessageMixin
 
 
@@ -16,4 +17,4 @@ class LoginView(SuccessMessageMixin, views.LoginView):
 
 class LogoutView(InfoMessageMixin, views.LogoutView):
     template_name = "logout.html"
-    message = _('You are logged out')
+    message = _("You are logged out")
