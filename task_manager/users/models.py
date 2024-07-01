@@ -8,8 +8,8 @@ class User(AbstractUser):
         return reverse("users:main")
 
     @property
-    def full_name(self):
+    def full_name(self) -> str:
         return self.get_full_name()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.full_name

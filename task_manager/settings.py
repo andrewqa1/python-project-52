@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_bootstrap5",
     "task_manager",
-    "task_manager.users.apps.UsersConfig",
+    "users",
+    "statuses",
+    "labels"
 ]
 
 MIDDLEWARE = [
@@ -136,7 +138,6 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
-
 
 LOGIN_URL = reverse_lazy("login")
 LOGIN_REDIRECT_URL = reverse_lazy("main")

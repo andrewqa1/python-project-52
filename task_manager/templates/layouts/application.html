@@ -18,6 +18,7 @@
         <a class="btn btn-primary" href={% url 'logout' %}>{% translate 'Logout' %}</a> 
       {% else %}
         <div class="ms-auto navbar-brand">
+          <a class="btn btn-primary" href={% url 'users:create' %}>{% translate 'Register' %}</a>  
           <a class="btn btn-primary" href={% url 'login' %}>{% translate 'Login' %}</a>  
         </div>  
       {% endif %}

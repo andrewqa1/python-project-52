@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
+from django.utils.translation import gettext as _
 
 
 class InfoMessageMixin:
@@ -13,7 +13,7 @@ class InfoMessageMixin:
 
 
 class AuthRequiredMixin(LoginRequiredMixin):
-    auth_required_message: str = ""
+    auth_required_message: tuple = _("You are not logged in! Please sign in")
 
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:

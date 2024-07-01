@@ -12,7 +12,6 @@
     <tr>
       <th>{% translate "id"|upper %}</th>
       <th>{% translate "name"|capfirst %}</th>
-      <th>{% translate "created date"|capfirst %}</th>
       <th></th>
     </tr>
   </thead>
@@ -21,12 +20,8 @@
       <tr>
         <td>{{ label.id }}</td>
         <td>{{ label.name }}</td>
-        <td>{{ label.created_at|date:"d.m.Y H:i" }}</td>
-        <td>
-          <a href="{% url 'labels:update' label.id %}">{% translate "Update" %}</a>
-          <br>
-          <a href="{% url 'labels:delete' label.id %}">{% translate "Delete" %}</a>
-        </td>
+        <td><a class="btn btn-danger" href={% url 'labels:delete' label.id %}>{% translate 'Delete' %}</a></td>
+        <td><a class="btn btn-primary" href={% url 'labels:update' label.id %}>{% translate 'Update' %}</a></td>
       </tr>
     {% endfor %}
   </tbody>

@@ -1,5 +1,3 @@
-from typing import Callable
-
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView
@@ -21,25 +19,22 @@ class UserCreateView(SuccessMessageMixin, CreateView):
 class UserListView(ListView):
     model: User = get_user_model()
     template_name: str = "users/index.html"
-    fields: tuple = ("first_name", "last_name", "username", "password1", "password2")
 
 
 class UserDeleteView(AuthRequiredMixin, SuccessMessageMixin, CheckSelfUserMixin, DeleteView):
     model: User = get_user_model()
     template_name: str = "users/delete.html"
-    auth_required_message: tuple = _("You are not logged in! Please sign in")
     permission_denied_message: tuple = _("You can't delete another user")
     permission_denied_url: str = "users:main"
     success_message: tuple = _("User successfully deleted")
-    success_url: Callable = reverse_lazy("users:main")
+    success_url = reverse_lazy("users:main")
 
 
 class UserUpdateView(AuthRequiredMixin, SuccessMessageMixin, CheckSelfUserMixin, UpdateView):
     model: User = get_user_model()
     form_class: UserCreateUpdateForm = UserCreateUpdateForm
     template_name: str = "users/update.html"
-    auth_required_message: tuple = _("You are not logged in! Please sign in")
     permission_denied_message: tuple = _("You can't update another user")
     permission_denied_url: str = "users:main"
     success_message: tuple = _("User successfully updated")
-    success_url: Callable = reverse_lazy("users:main")
+    success_url = reverse_lazy("users:main")

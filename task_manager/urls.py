@@ -24,5 +24,7 @@ urlpatterns = [
     path('login/', views.LoginView.as_view(), name="login"),
     path('logout/', views.LogoutView.as_view(), name="logout"),
     path("users/", include("users.urls", namespace="users")),
+    path("statuses/", include("statuses.urls", namespace="statuses")),
+    path("labels/", include("labels.urls", namespace="labels")),
     path("", views.IndexView.as_view(), name="main"),
 ]

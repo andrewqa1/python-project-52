@@ -12,7 +12,6 @@
     <tr>
       <th>{% translate "id"|upper %}</th>
       <th>{% translate "name"|capfirst %}</th>
-      <th>{% translate "created date"|capfirst %}</th>
       <th></th>
     </tr>
   </thead>
@@ -21,12 +20,8 @@
       <tr>
         <td>{{ status.id }}</td>
         <td>{{ status.name }}</td>
-        <td>{{ status.created_at|date:"d.m.Y H:i" }}</td>
-        <td>
-          <a href="{% url 'statuses:update' status.id %}">{% translate "Update" %}</a>
-          <br>
-          <a href="{% url 'statuses:delete' status.id %}">{% translate "Delete" %}</a>
-        </td>
+        <td><a class="btn btn-danger" href={% url 'statuses:delete' status.id %}>{% translate 'Delete' %}</a></td>
+        <td><a class="btn btn-primary" href={% url 'statuses:update' status.id %}>{% translate 'Update' %}</a></td>
       </tr>
     {% endfor %}
   </tbody>
