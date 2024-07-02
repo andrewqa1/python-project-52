@@ -13,6 +13,7 @@ class InfoMessageMixin:
 
 
 class NoPermissionRedirectMixin:
+
     def handle_no_permission(self, permission_denied_message, permission_denied_url):
         messages.error(self.request, permission_denied_message)
         return redirect(permission_denied_url)

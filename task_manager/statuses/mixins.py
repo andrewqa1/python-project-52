@@ -1,10 +1,15 @@
+from django.contrib import messages
+from django.shortcuts import redirect
 from django.utils.translation import gettext as _
 
 
 class CheckRelatedTasksMixin:
-    def dispatch(self, request, *args, **kwargs):
+
+    def post(self, request, *args, **kwargs):
         if self.get_object().tasks.all().exists():
-            return self.handle_no_permission(
-                _("Unable to delete status because it is in use"), "statuses:main"
+            messages.error(
+                self.request, _("Unable to delete status because it is in use")
             )
-        return super().dispatch(request, *args, **kwargs)
+            return redirect("statuses:main")
+
+        return super().post(request, *args, **kwargs)
