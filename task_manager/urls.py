@@ -24,9 +24,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("login/", views.LoginView.as_view(), name="login"),
     path("logout/", views.LogoutView.as_view(), name="logout"),
-    path("users/", include("users.urls", namespace="users")),
-    path("statuses/", include("statuses.urls", namespace="statuses")),
-    path("labels/", include("labels.urls", namespace="labels")),
-    path("tasks/", include("tasks.urls", namespace="tasks")),
+    path("users/", include("task_manager.users.urls", namespace="users")),
+    path("statuses/", include("task_manager.statuses.urls", namespace="statuses")),
+    path("labels/", include("task_manager.labels.urls", namespace="labels")),
+    path("tasks/", include("task_manager.tasks.urls", namespace="tasks")),
     path("", views.IndexView.as_view(), name="main"),
 ]
