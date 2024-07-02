@@ -18,3 +18,9 @@ migrate:
 test:
 	python3 manage.py test
 
+test-coverage:
+	coverage run --source='.' manage.py test task_manager
+	coverage report -m
+	coveralls
+
+
