@@ -32,9 +32,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don"t run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "*"
-]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -140,6 +138,4 @@ LOGIN_URL = reverse_lazy("login")
 LOGIN_REDIRECT_URL = reverse_lazy("main")
 LOGOUT_REDIRECT_URL = reverse_lazy("main")
 
-LOCALE_PATHS = (
-    BASE_DIR / "locale",
-)
+LOCALE_PATHS = (BASE_DIR / "locale",)

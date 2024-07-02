@@ -5,12 +5,6 @@ from task_manager.tasks.models import Task
 
 
 class TaskCreateUpdateForm(forms.ModelForm):
-    labels = forms.ModelMultipleChoiceField(
-        queryset=Label.objects.all(),
-        widget=forms.CheckboxSelectMultiple(),
-        required=False,
-    )
-
     class Meta:
         model = Task
         fields = ("name", "description", "status", "executor", "labels")

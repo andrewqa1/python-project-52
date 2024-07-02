@@ -1,12 +1,13 @@
 from django.urls import path
 
-from task_manager.users import views
+from task_manager.users.views import (UserCreateView, UserDeleteView,
+                                      UserListView, UserUpdateView)
 
 app_name = "users"
 
 urlpatterns = [
-    path("", views.UserListView.as_view(), name="main"),
-    path("create/", views.UserCreateView.as_view(), name="create"),
-    path("<int:pk>/delete/", views.UserDeleteView.as_view(), name="delete"),
-    path("<int:pk>/update/", views.UserUpdateView.as_view(), name="update"),
+    path("", UserListView.as_view(), name="main"),
+    path("create/", UserCreateView.as_view(), name="create"),
+    path("<int:pk>/delete/", UserDeleteView.as_view(), name="delete"),
+    path("<int:pk>/update/", UserUpdateView.as_view(), name="update"),
 ]
