@@ -198,7 +198,7 @@ msgstr "Выход"
 #: task_manager/templates/layouts/application.html:21
 #: task_manager/templates/users/create.html:8
 msgid "Register"
-msgstr "Регистрация"
+msgstr "Зарегистрировать"
 
 #: task_manager/templates/layouts/application.html:22
 #: task_manager/templates/login.html:5
