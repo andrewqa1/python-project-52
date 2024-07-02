@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install poetry
+          make lock
           make install
-          make build
       - name: Test & publish code coverage
         run: |
           make test-coverage
