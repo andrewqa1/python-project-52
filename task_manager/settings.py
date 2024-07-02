@@ -115,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ru-ru"
 
 TIME_ZONE = "UTC"
 
@@ -139,3 +139,7 @@ AUTH_USER_MODEL = "users.User"
 LOGIN_URL = reverse_lazy("login")
 LOGIN_REDIRECT_URL = reverse_lazy("main")
 LOGOUT_REDIRECT_URL = reverse_lazy("main")
+
+LOCALE_PATHS = (
+    BASE_DIR / "locale",
+)
