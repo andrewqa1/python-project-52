@@ -18,7 +18,7 @@ class TaskCreateView(
     model = Task
     form_class = TaskCreateUpdateForm
     template_name = "tasks/create.html"
-    success_message = _("Status successfully created")
+    success_message = _("Task successfully created")
 
     def form_valid(self, form: TaskCreateUpdateForm):
         form.instance.creator = self.request.user

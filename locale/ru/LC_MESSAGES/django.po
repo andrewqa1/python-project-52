@@ -310,3 +310,6 @@ msgstr "Вы залогинены"
 #: task_manager/views.py:20
 msgid "You are logged out"
 msgstr "Вы разлогинены"
+
+msgid "Task successfully created"
+msgstr "Задача успешно создана"
