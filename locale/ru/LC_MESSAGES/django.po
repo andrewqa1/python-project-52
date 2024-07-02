@@ -219,7 +219,7 @@ msgstr "Да, удалить"
 
 #: task_manager/templates/login.html:8
 msgid "Sign In"
-msgstr "Вход"
+msgstr "Войти"
 
 #: task_manager/templates/statuses/create.html:5
 #: task_manager/templates/statuses/index.html:9
