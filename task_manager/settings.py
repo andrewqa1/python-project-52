@@ -32,7 +32,13 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don"t run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "localhost",
+    ".herokuapp.com",
+    ".hexlet.app",
+    "webserver",
+]
+
 
 
 # Application definition
@@ -89,7 +95,6 @@ WSGI_APPLICATION = "task_manager.wsgi.application"
 DATABASES = {
     "default": dj_database_url.config(
         conn_max_age=600,
-        conn_health_checks=True,
     ),
 }
 
