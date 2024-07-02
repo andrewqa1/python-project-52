@@ -7,20 +7,18 @@ lock:
 	poetry lock
 
 up-dev:
-	python3 manage.py runserver 8000
+	poetry run python3 manage.py runserver 8000
 
 migrations:
-	python3 manage.py makemigrations --name $(name)
+	poetry run python3 manage.py makemigrations --name $(name)
 
 migrate:
-	python3 manage.py migrate
+	poetry run python3 manage.py migrate
 
 test:
-	python3 manage.py test
+	poetry run python3 manage.py test
 
 test-coverage:
-	coverage run --source='.' manage.py test task_manager
-	coverage report -m
-	coveralls
-
-
+	poetry run coverage run --source='.' manage.py test task_manager
+	poetry run coverage report -m
+	poetry run coveralls
