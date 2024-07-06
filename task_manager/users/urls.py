@@ -1,11 +1,7 @@
 from django.urls import path
 
-from task_manager.users.views import (
-    UserCreateView,
-    UserDeleteView,
-    UserListView,
-    UserUpdateView,
-)
+from task_manager.users.views import (UserCreateView, UserDeleteView,
+                                      UserListView, UserUpdateView)
 
 app_name = "users"
 
