@@ -7,10 +7,12 @@ lock:
 	poetry lock
 
 up-prod:
+	poetry run python3 manage.py migrate
 	poetry run python3 manage.py runserver 8000 --noreload
 
 up-dev:
-	poetry run python3 manage.py runserver 8000
+	poetry run python3 manage.py migrate
+	poetry run python3 manage.py runserver 0.0.0.0:8000
 
 migrations:
 	poetry run python3 manage.py makemigrations --name $(name)
