@@ -6,6 +6,9 @@ install:
 lock:
 	poetry lock
 
+up-prod:
+	poetry run python3 manage.py runserver 8000 --noreload
+
 up-dev:
 	poetry run python3 manage.py runserver 8000
 
