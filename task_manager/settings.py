@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don"t run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ["localhost", "https://*.onrender.com"]
+ALLOWED_HOSTS = ["localhost", "python-project-52-gp73.onrender.com"]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.onrender.com",
